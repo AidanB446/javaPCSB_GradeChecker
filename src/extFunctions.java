@@ -98,10 +98,14 @@ public class extFunctions {
         for (String posGrade : splitGrades) {
             int indexLength = posGrade.length(); // indexlength is used twice so, ehh mine aswell make it a var
 
+
+            // only classes contain 'ABC" so this is how we get the classes out of the data box
             if (posGrade.contains("ABC")) {
                 finalGrades1.add(posGrade);
             }
 
+
+            // If the string in 'splitGrades' is infact a grade, then it will pass the conditions in this if statement, and then be appended
             if (indexLength != 0 && indexLength < 7 && Arrays.asList(posGrade.split("")).contains(",") == false && letterGrades.contains(posGrade.substring(posGrade.length() - 1))) {
                 finalGrades1.add(posGrade);
             }

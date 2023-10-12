@@ -86,26 +86,17 @@ public class extFunctions {
 
         // get list of all possible grade letters
         ArrayList<String> letterGrades = new ArrayList<String>();
-        letterGrades.add("A");
-        letterGrades.add("B");
-        letterGrades.add("C");
-        letterGrades.add("D");
-        letterGrades.add("F");
-
-
+        
+        letterGrades.addAll(Arrays.asList("A", "B", "C", "D", "F"));
 
         // traverse through posGrade (contains everything in focus display box) and isolate your grades and classes.
         for (String posGrade : splitGrades) {
             int indexLength = posGrade.length(); // indexlength is used twice so, ehh mine aswell make it a var
 
-
-            // only classes contain 'ABC" so this is how we get the classes out of the data box
             if (posGrade.contains("ABC")) {
                 finalGrades1.add(posGrade);
             }
 
-
-            // If the string in 'splitGrades' is infact a grade, then it will pass the conditions in this if statement, and then be appended
             if (indexLength != 0 && indexLength < 7 && Arrays.asList(posGrade.split("")).contains(",") == false && letterGrades.contains(posGrade.substring(posGrade.length() - 1))) {
                 finalGrades1.add(posGrade);
             }
